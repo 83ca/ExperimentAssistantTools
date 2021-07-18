@@ -93,13 +93,15 @@ if __name__ == '__main__':
     # 引数の読み込み
     parser = argparse.ArgumentParser()
 
-    default_input_csv_path = "./setting_of_generation.csv"
+    default_output_folder = "./data/"
+
+    default_input_csv_path = "{}setting_of_generation.csv".format(default_output_folder)
     parser.add_argument("-i", default=default_input_csv_path, help="Input csv file. Default: {}".format(default_input_csv_path))
 
     default_number_of_samples = 10**6
     parser.add_argument("-n", default=default_number_of_samples, help="Number of samples. Default: {}".format(default_number_of_samples))
 
-    default_output_csv_path = "./generated_samples.csv"
+    default_output_csv_path = "{}generated_samples.csv".format(default_output_folder)
     parser.add_argument("-o", default=default_output_csv_path, help="Output csv file. Default: {}".format(default_output_csv_path))
 
     args = parser.parse_args()

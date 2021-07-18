@@ -63,7 +63,9 @@ if __name__ == '__main__':
     # 引数の読み込み
     parser = argparse.ArgumentParser()
 
-    default_input_csv_path = "./generated_samples.csv"
+    default_output_folder = "./data/"
+
+    default_input_csv_path = "{}generated_samples.csv".format(default_output_folder)
     parser.add_argument("-i", default=default_input_csv_path, help="Input csv file. Default: {}".format(default_input_csv_path))
 
     default_number_of_samples = 30
@@ -72,10 +74,10 @@ if __name__ == '__main__':
     default_number_of_trials = 10**3
     parser.add_argument("-nt", default=default_number_of_trials, help="Number of trials. Default: {}".format(default_number_of_trials))
 
-    default_output_selected_csv_path = "./selected_samples.csv"
+    default_output_selected_csv_path = "{}selected_samples.csv".format(default_output_folder)
     parser.add_argument("-os", default=default_output_selected_csv_path, help="Output csv file(Selected). Default: {}".format(default_output_selected_csv_path))
 
-    default_output_selected_csv_path = "./remaining_samples.csv"
+    default_output_selected_csv_path = "{}remaining_samples.csv".format(default_output_folder)
     parser.add_argument("-ore", default=default_output_selected_csv_path, help="Output csv file(Remaining). Default: {}".format(default_output_selected_csv_path))
 
     args = parser.parse_args()
